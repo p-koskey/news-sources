@@ -1,17 +1,33 @@
-{% import 'macros.html' as macro%}
+{% extends 'base.html'%}
 <!DOCTYPE html>
 <html>
-    <head>
+    head>
         <meta charset="utf-8">
-
+       
     </head>
     <body>
+        <!-- Content block -->
+        {% block content %}
         <!-- Sources section  -->
-        <h3></h3>
-         <ul>
+         
+            <h3 class="text-center">{{name}}</h3>
+            <div class="d-flex flex-wrap justify-content-center">
             {% for i in article %}
-                <li>{{ i.title }}</li>
+
+            <div class="card col-lg-3 m-2 p-2" style="width: 18rem;">
+                <img src="{{i.image}}" class="card-img-top" alt="no image">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.title}}</h5>
+                  <p class="card-text">{{i.description}}</p>
+                  <p class="card-text">{{i.publishDate}}</p>
+                  <a href="{{i.link}}" class="btn btn-primary">Read more...</a>
+                </div>
+              </div>
+            
+            
             {% endfor %}
-        </ul>
+        </div>
+
+        {% endblock %}
  </body>
 </html>

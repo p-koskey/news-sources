@@ -74,8 +74,9 @@ def get_articles(id):
             url = article_item.get('url')
             urlToImage = article_item.get('urlToImage')
             publishedAt = article_item.get('publishedAt')
-            print(title)
-            article_object = Article(name,author,title,description,url,urlToImage,publishedAt)
-            article_results.append(article_object)
-    
+
+            if urlToImage != "null":
+                article_object = Article(name,author,title,description,url,urlToImage,publishedAt)
+                article_results.append(article_object)
+
     return article_results

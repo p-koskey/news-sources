@@ -20,5 +20,7 @@ def article(id):
     View news page function that returns the news source page and its data
     '''
     article = get_articles(id)
-
-    return render_template('article.html',article = article)
+    for i in article:
+        name = i.name
+        
+    return render_template('article.html',article = article,name = name)
