@@ -1,0 +1,21 @@
+{% import 'macros.html' as macro%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <!-- Sources section  -->
+        <h3> News Sources</h3>
+         <ul>
+            {% for source in sources %}
+                <li>
+                    <a href="/article/{{source.id}}">
+                        {{ source.name}}
+                        </a>
+                </li>
+            {% endfor %}
+        </ul>
+ </body>
+</html>

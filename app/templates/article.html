@@ -1,0 +1,17 @@
+{% import 'macros.html' as macro%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <!-- Sources section  -->
+        <h3></h3>
+         <ul>
+            {% for i in article %}
+                <li>{{ i.title }}</li>
+            {% endfor %}
+        </ul>
+ </body>
+</html>
