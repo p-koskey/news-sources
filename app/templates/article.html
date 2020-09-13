@@ -35,14 +35,14 @@
       </aside>
 
       <section class="main">
-        <h3 class="text-center">{{name}}</h3>
+        <h3 class="text-center font-weight-bolder" >{{name}}</h3>
         <div class="d-flex flex-wrap justify-content-center">
           {% for i in article %}
 
           <div class="card col-lg-3 col-md-6 m-2 p-2" style="width: 18rem;">
               <img src="{{i.image}}" class="card-img-top" alt="no image">
               <div class="card-body">
-                <h5 class="card-title">{{i.title}}</h5>
+                <h5 class="card-title font-weight-bold">{{i.title}}</h5>
                 <p class="card-text">{{i.description}}</p>
                 <p class="card-text">Published on : {{i.publishDate}}</p>
                 <a href="{{i.link}}" class="btn btn-primary">Read more...</a>

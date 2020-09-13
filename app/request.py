@@ -18,6 +18,7 @@ def configure_request(app):
     top_url = app.config['TOP_API_BASE_URL']
 
 def get_sources():
+    
     '''
     Function that gets the json response to our url request
     '''

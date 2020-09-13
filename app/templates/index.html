@@ -20,7 +20,7 @@
             <ul class="list-group">
               {% for source in sources %}
               <a href="/article/{{source.id}}">
-              <li class="list-group-item list-group-item-action">
+              <li class="list-group-item list-group-item-action ">
                   
                       {{ source.name}}
                       
@@ -31,14 +31,14 @@
         </aside>
             
           <section class="main">
-            <h3 class="text-center">TOP HEADLINES</h3>
+            <h3 class="text-center font-weight-bolder">TOP HEADLINES</h3>
             <div class="d-flex flex-wrap justify-content-center">
             {% for i in top %}
 
                 <div class="card col-lg-3 col-md-6 m-2 p-2" >
                     <img src="{{i.image}}" class="card-img-top" alt="no image">
                     <div class="card-body">
-                    <h5 class="card-title">{{i.title}}</h5>
+                    <h5 class="card-title font-weight-bold">{{i.title}}</h5>
                     <p class="card-text">{{i.description}}</p>
                     <p class="card-text">Source : {{i.source}}</p>
                     <a href="{{i.link}}" class="btn btn-primary">Read more...</a>
