@@ -18,12 +18,17 @@
         <aside class="sidebar">
           <ul class="list-group">
             {% for source in sources %}
-            <a href="/article/{{source.id}} list-group-item active">
-            <li class="list-group-item list-group-item-action">
-                
+              {% if source.name == name %}
+                <a href="#">
+                  <li class="list-group-item list-group-item-action  list-group-item active">
+                      {{ source.name}}
+                  </li></a>
+              {% else %}
+                <a href="/article/{{source.id}}">
+                <li class="list-group-item list-group-item-action">
                     {{ source.name}}
-                    
-            </li></a>
+                </li></a>
+                {% endif %}
             {% endfor %}
           </ul>
         
