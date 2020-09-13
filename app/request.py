@@ -1,10 +1,11 @@
 from app import app
 import urllib.request, json
-from .models import source, article
+from .models import source, article, top
 from datetime import datetime
 
 Source = source.Source
 Article = article.Article
+Top = top.Top
 
 #Get api key
 api_key = app.config['NEWS_API_KEY']
@@ -12,7 +13,7 @@ api_key = app.config['NEWS_API_KEY']
 #get base url
 base_url = app.config["SOURCE_API_BASE_URL"]
 article_url = app.config["ARTICLES_API_BASE_URL"]
-
+top_url = app.config["TOP_API_BASE_URL"]
 
 def get_sources():
     '''
@@ -83,3 +84,30 @@ def get_articles(id):
                 article_results.append(article_object)
 
     return article_results
+
+def topheadlines():
+        get_top_url = top_url.format(api_key)
+
+        with urllib.request.urlopen(get_top_url) as url:
+            top_details_data = url.read()
+            top_details_response = json.loads(top_details_data)
+
+        
+            if top_details_response['articles']:
+                top_results_list = top_details_response['articles']
+
+            top_results = []
+            for top_item in top_results_list:
+                source = top_item.get('source').get('name')
+                author = top_item.get('author')
+                title = top_item.get('title')
+                description = top_item.get('description')
+                url = top_item.get('url')
+                urlToImage = top_item.get('urlToImage')
+    
+
+                if urlToImage != "null":
+                    top_object = Top(source,author,title,description,url,urlToImage)
+                    top_results.append(top_object)
+
+        return top_results
