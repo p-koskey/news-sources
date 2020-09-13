@@ -1,4 +1,5 @@
 {% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,19 +16,19 @@
         <!-- Content block -->
         {% block content %}
         <!-- Sources section  -->
-            <aside class="sidebar">
-              <ul class="list-group">
-                {% for source in sources %}
-                <a href="/article/{{source.id}}">
-                <li class="list-group-item list-group-item-action">
-                    
-                        {{ source.name}}
-                        
-                </li></a>
-                {% endfor %}
-              </ul>
-            
-          </aside>
+        <aside class="sidebar">
+            <ul class="list-group">
+              {% for source in sources %}
+              <a href="/article/{{source.id}}">
+              <li class="list-group-item list-group-item-action">
+                  
+                      {{ source.name}}
+                      
+              </li></a>
+              {% endfor %}
+            </ul>
+          
+        </aside>
             
           <section class="main">
             <h3 class="text-center">TOP HEADLINES</h3>

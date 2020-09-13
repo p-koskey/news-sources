@@ -6,27 +6,49 @@
        
     </head>
     <body>
+       <!-- Styles block -->
+
+       {% block styles%}
+       {{ super() }}
+       <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+       {% endblock %}
         <!-- Content block -->
         {% block content %}
         <!-- Sources section  -->
-            
-            <h3 class="text-center">{{name}}</h3>
-            <div class="d-flex flex-wrap justify-content-center">
-            {% for i in article %}
-
-            <div class="card col-lg-3 m-2 p-2" style="width: 18rem;">
-                <img src="{{i.image}}" class="card-img-top" alt="no image">
-                <div class="card-body">
-                  <h5 class="card-title">{{i.title}}</h5>
-                  <p class="card-text">{{i.description}}</p>
-                  <p class="card-text">Published on : {{i.publishDate}}</p>
-                  <a href="{{i.link}}" class="btn btn-primary">Read more...</a>
-                </div>
-              </div>
-            
-            
+        <aside class="sidebar">
+          <ul class="list-group">
+            {% for source in sources %}
+            <a href="/article/{{source.id}} list-group-item active">
+            <li class="list-group-item list-group-item-action">
+                
+                    {{ source.name}}
+                    
+            </li></a>
             {% endfor %}
+          </ul>
+        
+      </aside>
+
+      <section class="main">
+        <h3 class="text-center">{{name}}</h3>
+        <div class="d-flex flex-wrap justify-content-center">
+          {% for i in article %}
+
+          <div class="card col-lg-3 m-2 p-2" style="width: 18rem;">
+              <img src="{{i.image}}" class="card-img-top" alt="no image">
+              <div class="card-body">
+                <h5 class="card-title">{{i.title}}</h5>
+                <p class="card-text">{{i.description}}</p>
+                <p class="card-text">Published on : {{i.publishDate}}</p>
+                <a href="{{i.link}}" class="btn btn-primary">Read more...</a>
+              </div>
+            </div>
+          
+          
+          {% endfor %}
         </div>
+        </section>
+
 
         {% endblock %}
  </body>

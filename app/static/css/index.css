@@ -1,6 +1,6 @@
 .sidebar, .main{
     transition: all .3s ease-out;
-    overflow-x: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     position: absolute;
     top: 64px;

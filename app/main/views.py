@@ -1,9 +1,9 @@
 from flask import render_template
-from app import app
-from .request import get_sources, get_articles, topheadlines
+from . import main
+from ..request import get_sources, get_articles, topheadlines
 #views
 
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -11,16 +11,17 @@ def index():
     '''
     news_source = get_sources()
     top = topheadlines()
-    return render_template('index.html', sources = news_source, top = top)
+    return render_template('index.html',sources = news_source, top = top)
 
-@app.route('/article/<id>')
+@main.route('/article/<id>')
 def article(id):
 
     '''
     View news page function that returns the news source page and its data
     '''
+    news_source = get_sources()
     article = get_articles(id)
     for i in article:
         name = i.name
         
-    return render_template('article.html',article = article,name = name)
+    return render_template('article.html',sources = news_source,article = article,name = name)
