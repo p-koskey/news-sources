@@ -20,7 +20,7 @@
             {% for source in sources %}
               {% if source.name == name %}
                 <a href="#">
-                  <li class="list-group-item list-group-item-action  list-group-item active">
+                  <li class="list-group-item list-group-item-action  list-group-item-info">
                       {{ source.name}}
                   </li></a>
               {% else %}
@@ -39,7 +39,7 @@
         <div class="d-flex flex-wrap justify-content-center">
           {% for i in article %}
 
-          <div class="card col-lg-3 m-2 p-2" style="width: 18rem;">
+          <div class="card col-lg-3 col-md-6 m-2 p-2" style="width: 18rem;">
               <img src="{{i.image}}" class="card-img-top" alt="no image">
               <div class="card-body">
                 <h5 class="card-title">{{i.title}}</h5>
