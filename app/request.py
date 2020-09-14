@@ -10,6 +10,7 @@ base_url = None
 article_url = None
 top_url = None
 
+
 def configure_request(app):
     global api_key,base_url,article_url,top_url
     api_key = app.config['NEWS_API_KEY']
@@ -17,12 +18,12 @@ def configure_request(app):
     article_url = app.config['ARTICLES_API_BASE_URL']
     top_url = app.config['TOP_API_BASE_URL']
 
-def get_sources():
+def get_sources(category):
     
     '''
     Function that gets the json response to our url request
     '''
-    get_sources_url = base_url.format(api_key)
+    get_sources_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url.read()
@@ -50,11 +51,10 @@ def process_results(source_list):
     source_results = []
 
     for source_item in source_list:
-        id = source_item.get('id')
-        
+        id = source_item.get('id')        
         name= source_item.get('name')
-        
-        source_object= Source(id,name)
+        category = source_item.get('category')
+        source_object= Source(id,name,category)
         source_results.append(source_object)
         
     return source_results
