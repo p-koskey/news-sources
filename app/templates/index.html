@@ -17,15 +17,33 @@
         {% block content %}
         <!-- Sources section  -->
         <aside class="sidebar">
+            <h3 class="bg-dark text-white">General News</h3>
             <ul class="list-group">
-              {% for source in sources %}
-              <a href="/article/{{source.id}}">
-              <li class="list-group-item list-group-item-action ">
-                  
-                      {{ source.name}}
-                      
-              </li></a>
-              {% endfor %}
+             {{macro.displaySources(general)}}
+            </ul>
+            <h3 class="bg-dark text-white">Business News</h3>
+            <ul class="list-group">
+             {{macro.displaySources(business)}}
+            </ul>
+            <h3 class="bg-dark text-white">Science News</h3>
+            <ul class="list-group">
+             {{macro.displaySources(science)}}
+            </ul>
+            <h3 class="bg-dark text-white">Health News</h3>
+            <ul class="list-group">
+             {{macro.displaySources(health)}}
+            </ul>
+            <h3 class="bg-dark text-white">Technology News</h3>
+            <ul class="list-group">
+             {{macro.displaySources(technology)}}
+            </ul>
+            <h3 class="bg-dark text-white">Entertainment News</h3>
+            <ul class="list-group">
+             {{macro.displaySources(entertainment)}}
+            </ul>
+            <h3 class="bg-dark text-white">Sports News</h3>
+            <ul class="list-group">
+             {{macro.displaySources(sports)}}
             </ul>
           
         </aside>
