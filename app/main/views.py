@@ -21,7 +21,12 @@ def article(id):
     '''
     news_source = get_sources()
     article = get_articles(id)
-    for i in article:
-        name = i.name
+    if article:
+        for i in article:
+            name = i.name
+    else:
+        for source in news_source:
+            if source.id == id :
+                name = source.name
         
     return render_template('article.html',sources = news_source,article = article,name = name)

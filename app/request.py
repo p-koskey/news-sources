@@ -71,21 +71,24 @@ def get_articles(id):
             article_results_list = article_details_response['articles']
 
         article_results = []
-        for article_item in article_results_list:
-            name = article_item.get('source').get('name')
-            author = article_item.get('author')
-            title = article_item.get('title')
-            description = article_item.get('description')
-            url = article_item.get('url')
-            urlToImage = article_item.get('urlToImage')
-            pdate = article_item.get('publishedAt')
-            
-            publishedAt = datetime.strptime(pdate, '%Y-%m-%dT%H:%M:%SZ').date()
+        if article_details_response["totalResults"] > 0:
 
-            if urlToImage != "null":
-                article_object = Article(name,author,title,description,url,urlToImage,publishedAt)
-                article_results.append(article_object)
+            for article_item in article_results_list:
+                name = article_item.get('source').get('name')
+                author = article_item.get('author')
+                title = article_item.get('title')
+                description = article_item.get('description')
+                url = article_item.get('url')
+                urlToImage = article_item.get('urlToImage')
+                pdate = article_item.get('publishedAt')
+                
+                publishedAt = datetime.strptime(pdate, '%Y-%m-%dT%H:%M:%SZ').date()
 
+                if urlToImage != "null":
+                    article_object = Article(name,author,title,description,url,urlToImage,publishedAt)
+                    article_results.append(article_object)
+        else:
+            return
     return article_results
 
 def topheadlines():
