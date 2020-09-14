@@ -1,17 +1,10 @@
 {% macro displaySources(source_list) %}
 
     {% for source in source_list %}
-            {% if source.name == name %}
-                <a href="#">
-                  <li class="list-group-item list-group-item-action  list-group-item-info">
-                      {{ source.name}}
-                  </li></a>
-              {% else %}
-                <a href="/article/{{source.id}}">
-                <li class="list-group-item list-group-item-action">
-                    {{ source.name}}
-                </li></a>
-                {% endif %}
+    <a href="/article/{{source.id}}">
+    <li class="list-group-item list-group-item-action ">{{source.name}}
+    </li></a>
     {% endfor %}
 
 {% endmacro %}
+

@@ -1,5 +1,4 @@
 {% extends 'base.html'%}
-{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     head>
@@ -19,31 +18,101 @@
         <aside class="sidebar">
           <h3 class="bg-dark text-white">General News</h3>
           <ul class="list-group">
-           {{macro.displaySources(general)}}
+            {% for general in general %}     
+              {%if general.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info ">{{general.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{general.id}}">
+                <li class="list-group-item list-group-item-action ">{{general.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
           <h3 class="bg-dark text-white">Business News</h3>
           <ul class="list-group">
-           {{macro.displaySources(business)}}
+            {% for business in business %}     
+              {%if business.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info ">{{business.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{business.id}}">
+                <li class="list-group-item list-group-item-action ">{{business.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
           <h3 class="bg-dark text-white">Science News</h3>
           <ul class="list-group">
-           {{macro.displaySources(science)}}
+            {% for science in science %}     
+              {%if science.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info">{{science.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{science.id}}">
+                <li class="list-group-item list-group-item-action ">{{science.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
           <h3 class="bg-dark text-white">Health News</h3>
           <ul class="list-group">
-           {{macro.displaySources(health)}}
+            {% for health in health %}     
+              {%if health.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info ">{{health.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{health.id}}">
+                <li class="list-group-item list-group-item-action ">{{health.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
           <h3 class="bg-dark text-white">Technology News</h3>
           <ul class="list-group">
-           {{macro.displaySources(technology)}}
+            {% for technology in technology %}     
+              {%if technology.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info">{{technology.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{technology.id}}">
+                <li class="list-group-item list-group-item-action ">{{technology.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
           <h3 class="bg-dark text-white">Entertainment News</h3>
           <ul class="list-group">
-           {{macro.displaySources(entertainment)}}
+            {% for entertainment in entertainment %}     
+              {%if entertainment.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info">{{entertainment.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{entertainment.id}}">
+                <li class="list-group-item list-group-item-action ">{{entertainment.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
           <h3 class="bg-dark text-white">Sports News</h3>
           <ul class="list-group">
-           {{macro.displaySources(sports)}}
+            {% for sports in sports %}     
+              {%if sports.name == name%}
+                <a href="/#">
+                <li class="list-group-item list-group-item-action list-group-item-info ">{{sports.name}}
+                </li></a>
+                {%else%}
+                <a href="/article/{{sports.id}}">
+                <li class="list-group-item list-group-item-action ">{{sports.name}}
+                </li></a>
+                {% endif%}
+           {%endfor%}
           </ul>
         
       </aside>
