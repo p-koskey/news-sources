@@ -4,7 +4,7 @@ news source and get to view all the news articles from the source.
 
 ## Link
 
-Link : [News Sources]()
+Link : [News Sources](https://newssources-koskey.herokuapp.com/)
 
 ## User Stories
 User would like to: 
