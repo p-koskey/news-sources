@@ -1,26 +1,27 @@
 .sidebar, .main{
-    transition: all .3s ease-out;
-    overflow-y: auto;
-    position: absolute;
-    top: 64px;
-    bottom: 0;
-  
-  }
-  
-  .sidebar{
-    width:300px;
-  }
-
-  .main{
-  background-color: #f5f5f5;
+  transition: all .3s ease-out;
+  overflow-y: auto;
   position: absolute;
-  left: 310px;
-  right: 0;
-  padding: 20px;
+  top: 64px;
+  bottom: 0;
 
-  }
+}
+
+.sidebar{
+  width:25%;
+  overflow-wrap: break-word;
+}
+
+.main{
+background-color: #f5f5f5;
+position: absolute;
+width: 75%;
+right: 0;
+padding: 20px;
+
+}
+
+ul {
+    list-style-type: none;
   
-  ul {
-      list-style-type: none;
-    
-  }
+}
