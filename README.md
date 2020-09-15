@@ -4,7 +4,7 @@ news source and get to view all the news articles from the source.
 
 ## Link
 
-Link : [News Sources](https://newssources-koskey.herokuapp.com/)
+Link : [News Sources]()
 
 ## User Stories
 User would like to: 
@@ -12,6 +12,7 @@ User would like to:
 - would also want to select a news source and see all news articles from the selected news source in the application.
 - would want to see the image, description and the time a news article was created.
 - would want to click on an article and read the full article on the source website.
+
 
 ## Installation requirements:
 -Python 3.8
